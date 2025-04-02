@@ -1,8 +1,9 @@
 'use client';
-import { instance } from '@/axios';
 import { tritem } from '@/types';
 import { useEffect, useState } from 'react';
 import Toppart from '../components/Toppart';
+import { instance } from '@/axios';
+
 
 const TransationList = () => {
   const [result, setResult] = useState< { items: tritem[]; filteredBy: string } | null>(null)
@@ -14,8 +15,7 @@ const TransationList = () => {
 
   useEffect(() => {
     try {
-      instance
-      .get(`/main/transactions?type=${filter.type}&time=${filter.time}`)
+      instance.get(`/main/transactions?type=${filter.type}&time=${filter.time}`)
       .then((item) => {
         const reverseData=item.data.data?.items.reverse();
         const newArr={

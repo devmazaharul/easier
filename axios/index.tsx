@@ -8,7 +8,7 @@ const instance = axios.create({
   baseURL: defaultKey.api_url,
   headers: {
     "Content-Type": "application/json",
-    "Authorization":token
+    "Authorization":token ? token:""
   },
   timeout: 10000,
 })

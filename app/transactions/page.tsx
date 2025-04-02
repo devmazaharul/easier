@@ -6,8 +6,11 @@ import { useRouter } from "next/navigation";
 
 const Page = () => {
   const router=useRouter()
+
   useEffect(()=>{
-    if(!hasToken()) router.push("/login")
+    if(!hasToken())   router.push("/login")
+    
+
     
   },[router])
 
