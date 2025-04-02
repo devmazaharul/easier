@@ -24,3 +24,41 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components{
+  .primary-btn {
+    @apply bg-gray-700 capitalize hover:translate-y-0.5 hover:bg-gray-600 cursor-pointer hover:animate-pulse duration-200 px-8 py-2 rounded-sm shadow-2xl text-gray-100 
+  }
+  .secondary-btn {
+    @apply bg-fuchsia-700 capitalize hover:translate-y-0.5 hover:bg-fuchsia-600 cursor-pointer hover:animate-pulse duration-200 px-8 py-2 rounded-sm shadow-2xl text-gray-100 
+  }
+  .additional-btn {
+    @apply bg-emerald-600 capitalize hover:translate-y-0.5 hover:bg-emerald-600 cursor-pointer hover:animate-pulse duration-200 px-8 py-2 rounded-sm shadow-2xl text-gray-100 
+  }
+  .outline-btn {
+    @apply border border-gray-100 capitalize hover:translate-y-0.5 hover:bg-gray-200  cursor-pointer hover:animate-pulse duration-200 px-8 py-2 rounded-sm shadow-2xl text-gray-700 
+  }
+  .danger-btn {
+    @apply bg-pink-600 capitalize hover:translate-y-0.5 hover:bg-pink-500 cursor-pointer hover:animate-pulse duration-200 px-8 py-2 rounded-sm shadow-2xl text-gray-100
+  }
+  .primary-bg{
+    @apply bg-gray-700
+  }
+  .secondary-bg{
+    @apply bg-fuchsia-700
+  }
+  .additional-bg{
+    @apply bg-emerald-700
+  }
+  .section{
+    @apply my-8 p-4
+  }
+  .common-color{
+    @apply text-emerald-500
+  }
+
+  .input{
+    @apply border border-gray-200 outline-none w-full my-1 p-2 rounded-md text-gray-600
+  }
+
+}
