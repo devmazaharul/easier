@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${primary_font.className} antialiased`}>
-        <div className="w-[95%] mx-auto">
+        <div className="w-full">
           <Header />
           {children}
           <Toaster position='bottom-right'/>

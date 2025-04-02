@@ -49,7 +49,7 @@ if(hasToken() && confirm("are you sure?")){
 
 
   return (
-    <div>
+    <div className='w-[95%] mx-auto'>
       <div className="flex items-center py-4  justify-between">
         <div>
           <h1 className="text-2xl font-bold">
@@ -91,10 +91,8 @@ if(hasToken() && confirm("are you sure?")){
             Panel
           </Link>
 
-         {!isLogin &&  <Link
-            className={`${
-              pathNmae == '/reset' ? 'common-color' : ''
-            } hover:text-primary `}
+         {isLogin==false &&  <Link
+            className={ pathNmae == '/reset' ? 'common-color' : 'text-gray-500'}  
             href={'/reset'}
            
           >
