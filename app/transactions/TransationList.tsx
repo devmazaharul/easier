@@ -94,9 +94,10 @@ const TransationList = () => {
            <h1> Last : <span className='text-emerald-500'>{filter && filter.time=="all"?"Any":filter.time} Tranaction</span> </h1>
            <h1> Tranaction type : <span className='text-emerald-500'>{filter && filter.type=="all"?"Any":filter.type.split("_").join(" ")} </span> </h1>
            </div>
-              <table className="min-w-full border rounded-lg shadow-2xl shadow-gray-50">
+              <table className="min-w-full  rounded-lg shadow-2xl shadow-gray-50">
                 <thead>
                   <tr className="bg-gray-700 text-gray-200">
+                    <th className="p-2 border border-gray-200">No.</th>
                     <th className="p-2 border border-gray-200">Name</th>
                     <th className="p-2 border border-gray-200">Amount</th>
                     <th className="p-2 border border-gray-200">Number</th>
@@ -107,34 +108,37 @@ const TransationList = () => {
                 </thead>
                 <tbody>
                   {result &&
-                    result.items?.map((item: tritem) => (
-                      <tr
+                    result.items?.map((item: tritem,i) => (
+                      <tr tabIndex={0}
                         key={Math.random()}
-                        className="text-center odd:bg-gray-50 even:bg-white"
+                        className="text-center hover:bg-gray-100 hover:scale-105 ease-in-out duration-200  cursor-cell odd:bg-gray-50 even:bg-white focus:bg-cyan-700 focus:text-gray-200"
                       >
-                        <td className="p-2 border border-gray-200 capitalize">
-                          {item.name}
+                        <td className="p-2 capitalize">
+                        {i+1}
                         </td>
-                        <td className="p-2 border border-gray-200 ">
+                        <td className="p-2 capitalize">
+                        {item.name}
+                        </td>
+                        <td className="p-2 ">
                           <p> {item.amount} BDT</p>
                         </td>
-                        <td className="p-2 border border-gray-200">
+                        <td className="p-2 ">
                           {item.type == 'others' ? (
                             <p>xxxxxxxx </p>
                           ) : (
                             item.userNumber
                           )}
                         </td>
-                        <td className="p-2 border border-gray-200">
+                        <td className="p-2 ">
                           {item.type.split('_').join(' ').toLocaleLowerCase()}
                         </td>
-                        <td className="p-2 border border-gray-200">
+                        <td className="p-2">
                           {new Date(item.updatedAt)
                             .toLocaleString()
                             .split(',')
                             .join(' - ')}
                         </td>
-                        <td  className="p-2 border border-gray-200">{item.addedBy}</td>
+                        <td  className="p-2 ">{item.addedBy}</td>
                       </tr>
                     ))}
                 </tbody>
