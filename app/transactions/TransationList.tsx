@@ -78,7 +78,7 @@ const TransationList = () => {
                     className="input"
                   >
                     <option value="all">all</option>
-                    <option value="1d">1D</option>
+                    <option value="today">1D</option>
                     <option value="7d">7D</option>
                     <option value="15d">15D</option>
                     <option value="1m">1M</option>
