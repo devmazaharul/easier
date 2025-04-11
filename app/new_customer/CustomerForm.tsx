@@ -32,6 +32,12 @@ const handleSubmit=async(e:React.FormEvent)=>{
       if(!isValidName(name) ) throw new CustomError("Please provide a valid name",400);
         if(Number(amount)>999999999 || Number(amount)<1) throw new CustomError("Invalid amount",400);
     if(type !== "others" && !number) throw new CustomError("Please provide number",400)
+      if(type=="others"){
+        setState({
+          ...state,
+          number:""
+        })
+      }
       if(type!=="others" && number && !isValidNumberbd(number)) throw new CustomError("Invalid bd 11 digit number",400)
         //api logic
       
